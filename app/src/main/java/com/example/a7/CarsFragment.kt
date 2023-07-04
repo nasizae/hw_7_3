@@ -46,8 +46,8 @@ class CarsFragment : Fragment() {
             add(Car("https://images.hgmsites.net/lrg/2021-honda-accord-ex-sedan-angular-front-exterior-view_100778434_l.jpg","Honda accord",2019))
         }
     }
-    private fun onClick(position: Int){
-        findNavController().navigate(R.id.infoFragment, bundleOf("key" to carList[position]))
+    private fun onClick(car: Car){
+        findNavController().navigate(CarsFragmentDirections.actionCarsFragmentToInfoFragment(car))
 
     }
 

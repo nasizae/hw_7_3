@@ -9,10 +9,18 @@
         android:id="@+id/carsFragment"
         android:name="com.example.a7.CarsFragment"
         android:label="fragment_cars"
-        tools:layout="@layout/fragment_cars" />
+        tools:layout="@layout/fragment_cars" >
+        <action
+            android:id="@+id/action_carsFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.example.a7.InfoFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info">
+        <argument android:name="car"
+            app:argType="com.example.a7.Car"
+            />
+    </fragment>
 </navigation>

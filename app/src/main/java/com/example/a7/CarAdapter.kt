@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.a7.databinding.ItemCarsBinding
 
-class CarAdapter(private var carList: ArrayList<Car>,val onItemClick:(position:Int)->Unit):
+class CarAdapter(private var carList: ArrayList<Car>,val onItemClick:(car:Car)->Unit):
     RecyclerView.Adapter<CarAdapter.CarHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarHolder {
@@ -29,7 +29,7 @@ class CarAdapter(private var carList: ArrayList<Car>,val onItemClick:(position:I
                     Glide.with(imgCar).load(car.image).into(imgCar)
                 }
                 itemView.setOnClickListener {
-                    onItemClick(adapterPosition)
+                    onItemClick(car)
                 }
             }
     }
